@@ -2,14 +2,19 @@ package nbodies;
 /*************************************************************************
  * Compilation: javac StdDraw.java Execution: java StdDraw
  *
- * Standard drawing library. This class provides a basic capability for creating drawings with your programs. It uses a simple graphics model that
- * allows you to create drawings consisting of points, lines, and curves in a window on your computer and to save the drawings to a file.
+ * Standard drawing library. This class provides a basic capability for creating
+ * drawings with your programs. It uses a simple graphics model that allows you
+ * to create drawings consisting of points, lines, and curves in a window on
+ * your computer and to save the drawings to a file.
  *
- * Todo ---- - Add support for gradient fill, etc. - Fix setCanvasSize() so that it can only be called once. - On some systems, drawing a line (or
- * other shape) that extends way beyond canvas (e.g., to infinity) dimensions does not get drawn.
+ * Todo ---- - Add support for gradient fill, etc. - Fix setCanvasSize() so that
+ * it can only be called once. - On some systems, drawing a line (or other
+ * shape) that extends way beyond canvas (e.g., to infinity) dimensions does not
+ * get drawn.
  *
- * Remarks ------- - don't use AffineTransform for rescaling since it inverts images and strings - careful using setFont in inner loop within an
- * animation - it can cause flicker
+ * Remarks ------- - don't use AffineTransform for rescaling since it inverts
+ * images and strings - careful using setFont in inner loop within an animation
+ * - it can cause flicker
  *
  *************************************************************************/
 
@@ -25,11 +30,15 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
- * <i>Standard draw</i>. This class provides a basic capability for creating drawings with your programs. It uses a simple graphics model that allows
- * you to create drawings consisting of points, lines, and curves in a window on your computer and to save the drawings to a file.
+ * <i>Standard draw</i>. This class provides a basic capability for creating
+ * drawings with your programs. It uses a simple graphics model that allows you
+ * to create drawings consisting of points, lines, and curves in a window on
+ * your computer and to save the drawings to a file.
  * <p>
- * For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of <i>Introduction to Programming in Java: An
- * Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see
+ * <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+ * <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by
+ * Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
@@ -52,13 +61,15 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     public static final Color YELLOW = Color.YELLOW;
 
     /**
-     * Shade of blue used in Introduction to Programming in Java. It is Pantone 300U. The RGB values are approximately (9, 90, 166).
+     * Shade of blue used in Introduction to Programming in Java. It is Pantone
+     * 300U. The RGB values are approximately (9, 90, 166).
      */
     public static final Color BOOK_BLUE = new Color(9, 90, 166);
     public static final Color BOOK_LIGHT_BLUE = new Color(103, 198, 243);
 
     /**
-     * Shade of red used in Algorithms 4th edition. It is Pantone 1805U. The RGB values are approximately (150, 35, 31).
+     * Shade of red used in Algorithms 4th edition. It is Pantone 1805U. The RGB
+     * values are approximately (150, 35, 31).
      */
     public static final Color BOOK_RED = new Color(150, 35, 31);
 
@@ -133,18 +144,21 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Set the window size to the default size 512-by-512 pixels. This method must be called before any other commands.
+     * Set the window size to the default size 512-by-512 pixels. This method
+     * must be called before any other commands.
      */
     public static void setCanvasSize() {
         setCanvasSize(DEFAULT_SIZE, DEFAULT_SIZE);
     }
 
     /**
-     * Set the window size to w-by-h pixels. This method must be called before any other commands.
+     * Set the window size to w-by-h pixels. This method must be called before
+     * any other commands.
      *
      * @param w the width as a number of pixels
      * @param h the height as a number of pixels
-     * @throws a IllegalArgumentException if the width or height is 0 or negative
+     * @throws a IllegalArgumentException if the width or height is 0 or
+     *             negative
      */
     public static void setCanvasSize(int w, int h) {
         if (w < 1 || h < 1)
@@ -189,8 +203,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
                                                               // windows
-        // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // closes
-        // only current window
+                                                              // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // closes
+                                                              // only current window
         frame.setTitle("Standard Draw");
         frame.setJMenuBar(createMenuBar());
         frame.pack();
@@ -205,8 +219,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         menuBar.add(menu);
         JMenuItem menuItem1 = new JMenuItem(" Save...   ");
         menuItem1.addActionListener(std);
-        menuItem1.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_S, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+        menuItem1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menu.add(menuItem1);
         return menuBar;
     }
@@ -363,8 +376,9 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Set the pen color to the given color. The available pen colors are BLACK, BLUE, CYAN, DARK_GRAY, GRAY, GREEN, LIGHT_GRAY, MAGENTA, ORANGE,
-     * PINK, RED, WHITE, and YELLOW.
+     * Set the pen color to the given color. The available pen colors are BLACK,
+     * BLUE, CYAN, DARK_GRAY, GRAY, GREEN, LIGHT_GRAY, MAGENTA, ORANGE, PINK,
+     * RED, WHITE, and YELLOW.
      * 
      * @param color the Color to make the pen
      */
@@ -379,7 +393,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * @param red the amount of red (between 0 and 255)
      * @param green the amount of green (between 0 and 255)
      * @param blue the amount of blue (between 0 and 255)
-     * @throws IllegalArgumentException if the amount of red, green, or blue are outside prescribed range
+     * @throws IllegalArgumentException if the amount of red, green, or blue are
+     *             outside prescribed range
      */
     public static void setPenColor(int red, int green, int blue) {
         if (red < 0 || red >= 256)
@@ -459,8 +474,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         if (scaledPenRadius <= 1)
             pixel(x, y);
         else
-            offscreen.fill(new Ellipse2D.Double(xs - scaledPenRadius / 2, ys - scaledPenRadius / 2, scaledPenRadius,
-                    scaledPenRadius));
+            offscreen.fill(new Ellipse2D.Double(xs - scaledPenRadius / 2, ys - scaledPenRadius / 2, scaledPenRadius, scaledPenRadius));
         draw();
     }
 
@@ -509,7 +523,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Draw an ellipse with given semimajor and semiminor axes, centered on (x, y).
+     * Draw an ellipse with given semimajor and semiminor axes, centered on (x,
+     * y).
      * 
      * @param x the x-coordinate of the center of the ellipse
      * @param y the y-coordinate of the center of the ellipse
@@ -534,7 +549,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Draw an ellipse with given semimajor and semiminor axes, centered on (x, y).
+     * Draw an ellipse with given semimajor and semiminor axes, centered on (x,
+     * y).
      * 
      * @param x the x-coordinate of the center of the ellipse
      * @param y the y-coordinate of the center of the ellipse
@@ -559,13 +575,16 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Draw an arc of radius r, centered on (x, y), from angle1 to angle2 (in degrees).
+     * Draw an arc of radius r, centered on (x, y), from angle1 to angle2 (in
+     * degrees).
      * 
      * @param x the x-coordinate of the center of the circle
      * @param y the y-coordinate of the center of the circle
      * @param r the radius of the circle
-     * @param angle1 the starting angle. 0 would mean an arc beginning at 3 o'clock.
-     * @param angle2 the angle at the end of the arc. For example, if you want a 90 degree arc, then angle2 should be angle1 + 90.
+     * @param angle1 the starting angle. 0 would mean an arc beginning at 3
+     *            o'clock.
+     * @param angle2 the angle at the end of the arc. For example, if you want a
+     *            90 degree arc, then angle2 should be angle1 + 90.
      * @throws IllegalArgumentException if the radius of the circle is negative
      */
     public static void arc(double x, double y, double r, double angle1, double angle2) {
@@ -654,7 +673,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Draw a filled rectangle of given half width and half height, centered on (x, y).
+     * Draw a filled rectangle of given half width and half height, centered on
+     * (x, y).
      * 
      * @param x the x-coordinate of the center of the rectangle
      * @param y the y-coordinate of the center of the rectangle
@@ -764,7 +784,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Draw picture (gif, jpg, or png) centered on (x, y), rotated given number of degrees
+     * Draw picture (gif, jpg, or png) centered on (x, y), rotated given number
+     * of degrees
      * 
      * @param x the center x-coordinate of the image
      * @param y the center y-coordinate of the image
@@ -814,14 +835,14 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
         if (ws <= 1 && hs <= 1)
             pixel(x, y);
         else {
-            offscreen.drawImage(image, (int) Math.round(xs - ws / 2.0), (int) Math.round(ys - hs / 2.0),
-                    (int) Math.round(ws), (int) Math.round(hs), null);
+            offscreen.drawImage(image, (int) Math.round(xs - ws / 2.0), (int) Math.round(ys - hs / 2.0), (int) Math.round(ws), (int) Math.round(hs), null);
         }
         draw();
     }
 
     /**
-     * Draw picture (gif, jpg, or png) centered on (x, y), rotated given number of degrees, rescaled to w-by-h.
+     * Draw picture (gif, jpg, or png) centered on (x, y), rotated given number
+     * of degrees, rescaled to w-by-h.
      * 
      * @param x the center x-coordinate of the image
      * @param y the center y-coordinate of the image
@@ -843,8 +864,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             pixel(x, y);
 
         offscreen.rotate(Math.toRadians(-degrees), xs, ys);
-        offscreen.drawImage(image, (int) Math.round(xs - ws / 2.0), (int) Math.round(ys - hs / 2.0),
-                (int) Math.round(ws), (int) Math.round(hs), null);
+        offscreen.drawImage(image, (int) Math.round(xs - ws / 2.0), (int) Math.round(ys - hs / 2.0), (int) Math.round(ws), (int) Math.round(hs), null);
         offscreen.rotate(Math.toRadians(+degrees), xs, ys);
 
         draw();
@@ -873,7 +893,8 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Write the given text string in the current font, centered on (x, y) and rotated by the specified number of degrees
+     * Write the given text string in the current font, centered on (x, y) and
+     * rotated by the specified number of degrees
      * 
      * @param x the center x-coordinate of the text
      * @param y the center y-coordinate of the text
@@ -924,11 +945,15 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Display on screen, pause for t milliseconds, and turn on <em>animation mode</em>: subsequent calls to drawing methods such as <tt>line()</tt>,
-     * <tt>circle()</tt>, and <tt>square()</tt> will not be displayed on screen until the next call to <tt>show()</tt>. This is useful for producing
-     * animations (clear the screen, draw a bunch of shapes, display on screen for a fixed amount of time, and repeat). It also speeds up drawing a
-     * huge number of shapes (call <tt>show(0)</tt> to defer drawing on screen, draw the shapes, and call <tt>show(0)</tt> to display them all on
-     * screen at once).
+     * Display on screen, pause for t milliseconds, and turn on
+     * <em>animation mode</em>: subsequent calls to drawing methods such as
+     * <tt>line()</tt>, <tt>circle()</tt>, and <tt>square()</tt> will not be
+     * displayed on screen until the next call to <tt>show()</tt>. This is
+     * useful for producing animations (clear the screen, draw a bunch of
+     * shapes, display on screen for a fixed amount of time, and repeat). It
+     * also speeds up drawing a huge number of shapes (call <tt>show(0)</tt> to
+     * defer drawing on screen, draw the shapes, and call <tt>show(0)</tt> to
+     * display them all on screen at once).
      * 
      * @param t number of milliseconds
      */
@@ -944,8 +969,10 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Display on-screen and turn off animation mode: subsequent calls to drawing methods such as <tt>line()</tt>, <tt>circle()</tt>, and
-     * <tt>square()</tt> will be displayed on screen when called. This is the default.
+     * Display on-screen and turn off animation mode: subsequent calls to
+     * drawing methods such as <tt>line()</tt>, <tt>circle()</tt>, and
+     * <tt>square()</tt> will be displayed on screen when called. This is the
+     * default.
      */
     public static void show() {
         defer = false;
@@ -990,8 +1017,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
             WritableRaster newRaster;
             newRaster = raster.createWritableChild(0, 0, width, height, 0, 0, new int[] { 0, 1, 2 });
             DirectColorModel cm = (DirectColorModel) onscreenImage.getColorModel();
-            DirectColorModel newCM = new DirectColorModel(cm.getPixelSize(), cm.getRedMask(), cm.getGreenMask(),
-                    cm.getBlueMask());
+            DirectColorModel newCM = new DirectColorModel(cm.getPixelSize(), cm.getRedMask(), cm.getGreenMask(), cm.getBlueMask());
             BufferedImage rgbBuffer = new BufferedImage(newCM, newRaster, false, null);
             try {
                 ImageIO.write(rgbBuffer, suffix, file);
@@ -1128,8 +1154,10 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * What is the next key that was typed by the user? This method returns a Unicode character corresponding to the key typed (such as 'a' or 'A').
-     * It cannot identify action keys (such as F1 and arrow keys) or modifier keys (such as control).
+     * What is the next key that was typed by the user? This method returns a
+     * Unicode character corresponding to the key typed (such as 'a' or 'A'). It
+     * cannot identify action keys (such as F1 and arrow keys) or modifier keys
+     * (such as control).
      * 
      * @return the next Unicode key typed
      */
@@ -1140,9 +1168,12 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     }
 
     /**
-     * Is the keycode currently being pressed? This method takes as an argument the keycode (corresponding to a physical key). It can handle action
-     * keys (such as F1 and arrow keys) and modifier keys (such as shift and control). See
-     * <a href = "http://download.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html"> KeyEvent.java</a> for a description of key codes.
+     * Is the keycode currently being pressed? This method takes as an argument
+     * the keycode (corresponding to a physical key). It can handle action keys
+     * (such as F1 and arrow keys) and modifier keys (such as shift and
+     * control). See <a href =
+     * "http://download.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html">
+     * KeyEvent.java</a> for a description of key codes.
      * 
      * @return true if keycode is currently being pressed, false otherwise
      */

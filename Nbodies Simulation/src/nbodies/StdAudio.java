@@ -5,8 +5,9 @@ package nbodies;
  * Simple library for reading, writing, and manipulating .wav files.
  *
  * 
- * Limitations ----------- - Does not seem to work properly when reading .wav files from a .jar file. - Assumes the audio is monaural, with sampling
- * rate of 44,100.
+ * Limitations ----------- - Does not seem to work properly when reading .wav
+ * files from a .jar file. - Assumes the audio is monaural, with sampling rate
+ * of 44,100.
  *
  *************************************************************************/
 
@@ -16,13 +17,17 @@ import java.net.*;
 import javax.sound.sampled.*;
 
 /**
- * <i>Standard audio</i>. This class provides a basic capability for creating, reading, and saving audio.
+ * <i>Standard audio</i>. This class provides a basic capability for creating,
+ * reading, and saving audio.
  * <p>
- * The audio format uses a sampling rate of 44,100 (CD quality audio), 16-bit, monaural.
+ * The audio format uses a sampling rate of 44,100 (CD quality audio), 16-bit,
+ * monaural.
  *
  * <p>
- * For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of <i>Introduction to Programming in Java: An
- * Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see
+ * <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+ * <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by
+ * Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
@@ -88,7 +93,8 @@ public final class StdAudio {
     }
 
     /**
-     * Write one sample (between -1.0 and +1.0) to standard audio. If the sample is outside the range, it will be clipped.
+     * Write one sample (between -1.0 and +1.0) to standard audio. If the sample
+     * is outside the range, it will be clipped.
      */
     public static void play(double in) {
 
@@ -111,7 +117,8 @@ public final class StdAudio {
     }
 
     /**
-     * Write an array of samples (between -1.0 and +1.0) to standard audio. If a sample is outside the range, it will be clipped.
+     * Write an array of samples (between -1.0 and +1.0) to standard audio. If a
+     * sample is outside the range, it will be clipped.
      */
     public static void play(double[] input) {
         for (int i = 0; i < input.length; i++) {
@@ -120,7 +127,8 @@ public final class StdAudio {
     }
 
     /**
-     * Read audio samples from a file (in .wav or .au format) and return them as a double array with values between -1.0 and +1.0.
+     * Read audio samples from a file (in .wav or .au format) and return them as
+     * a double array with values between -1.0 and +1.0.
      */
     public static double[] read(String filename) {
         byte[] data = readByte(filename);

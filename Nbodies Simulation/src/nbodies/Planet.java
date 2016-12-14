@@ -1,8 +1,9 @@
 package nbodies;
 
 /**
- * Data type that represents a particle in the universe. The movement of this particle will be determined by the net gravitational forces acting upon
- * it from other particles within the universe
+ * Data type that represents a particle in the universe. The movement of this
+ * particle will be determined by the net gravitational forces acting upon it
+ * from other particles within the universe
  * 
  * @author Peter Swantek
  * @version 1.8
@@ -138,7 +139,8 @@ public final class Planet {
     }
 
     /**
-     * Calculates the distance from this planet to another planet in the universe
+     * Calculates the distance from this planet to another planet in the
+     * universe
      * 
      * @param other The planet to which distance should be calculated
      * @return The distance between the two planets
@@ -165,7 +167,8 @@ public final class Planet {
     }
 
     /*
-     * Calculate the force of gravity between two planets using Newton's law of Gravitation
+     * Calculate the force of gravity between two planets using Newton's law of
+     * Gravitation
      */
     private static double getGravitationalForce(double mass1, double mass2, double distance) {
 
@@ -173,7 +176,8 @@ public final class Planet {
     }
 
     /*
-     * Calculates and sets the net force amount in the x and y directions for this planet based on the gravitational forces acting upon it from other
+     * Calculates and sets the net force amount in the x and y directions for
+     * this planet based on the gravitational forces acting upon it from other
      * planets
      */
     void setNetForce(Planet[] otherPlanets) {
@@ -214,7 +218,8 @@ public final class Planet {
     }
 
     /*
-     * calculates the the amount of force acting on this planet for either the x or y coordinate
+     * calculates the the amount of force acting on this planet for either the x
+     * or y coordinate
      */
     private static double getForceVector(double netForce, double distDelta, double distance) {
         return (netForce * distDelta) / distance;
@@ -243,9 +248,8 @@ public final class Planet {
     @Override
     public String toString() {
 
-        return String.format(
-                "Planet: %s, XVelocity: %f, YVelocity: %f, XAcceleration: %f, YAcceleration: %f, Mass: %f, PosX: %f, PosY: %f",
-                getImg(), getXVelocity(), getYVelocity(), getXAccel(), getYAccel(), getMass(), getX(), getY());
+        return String.format("Planet: %s, XVelocity: %f, YVelocity: %f, XAcceleration: %f, YAcceleration: %f, Mass: %f, PosX: %f, PosY: %f", getImg(), getXVelocity(), getYVelocity(), getXAccel(),
+                getYAccel(), getMass(), getX(), getY());
 
     }
 

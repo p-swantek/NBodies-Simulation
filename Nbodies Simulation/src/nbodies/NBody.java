@@ -1,10 +1,12 @@
 package nbodies;
 
 /**
- * Simulates N particles in a plane, particles move due to the gravitational forces mutually affecting each particle as demonstrated by Sir Issac
- * Newton's Law of Universal Gravitation. Takes in 3 command line arguments: the length of the simulation, the size of a time step in the simulation,
- * and a text file containing planetary data from which to build the universe for the simulation. Theme from 2001: A Space Odyssey plays during the
- * simulation
+ * Simulates N particles in a plane, particles move due to the gravitational
+ * forces mutually affecting each particle as demonstrated by Sir Issac Newton's
+ * Law of Universal Gravitation. Takes in 3 command line arguments: the length
+ * of the simulation, the size of a time step in the simulation, and a text file
+ * containing planetary data from which to build the universe for the
+ * simulation. Theme from 2001: A Space Odyssey plays during the simulation
  * 
  * @author Peter Swantek
  * @version 1.8
@@ -24,7 +26,8 @@ public final class NBody {
      * Builds a new instance of a Planet using data from a text file
      * 
      * @param in Input stream from a text file containing planetary data
-     * @return A Planet instance with the properties obtained from a text file for planetary data
+     * @return A Planet instance with the properties obtained from a text file
+     *         for planetary data
      */
     public static Planet getPlanet(In in) {
 
@@ -43,10 +46,13 @@ public final class NBody {
     }
 
     /**
-     * Build the universe for the simulation using a text file of data for a particular simulation
+     * Build the universe for the simulation using a text file of data for a
+     * particular simulation
      * 
-     * @param in Input stream from a text file containing data for a particular simulation
-     * @return An array of Planet objects within the universe that will be involved in the simulation
+     * @param in Input stream from a text file containing data for a particular
+     *            simulation
+     * @return An array of Planet objects within the universe that will be
+     *         involved in the simulation
      */
     public static Planet[] buildUniverse(In in) {
 
@@ -66,10 +72,12 @@ public final class NBody {
     }
 
     /**
-     * Draw the universe that is being simulated using StdDraw API. Draw the N particles and make the background a space image. Use the radius of the
+     * Draw the universe that is being simulated using StdDraw API. Draw the N
+     * particles and make the background a space image. Use the radius of the
      * universe to scale the canvas
      * 
-     * @param planets An array of Planets (particles) that should be drawn in the universe
+     * @param planets An array of Planets (particles) that should be drawn in
+     *            the universe
      */
     public static void drawUniverse(Planet[] planets) {
         StdDraw.setXscale(-universeSize, universeSize);
@@ -86,7 +94,8 @@ public final class NBody {
      * 
      * @param totalTime The total time of the simulation
      * @param dt The amount of time each simulation step will take
-     * @param planets The array of Planets that will be involved in the simulation
+     * @param planets The array of Planets that will be involved in the
+     *            simulation
      */
     public static void runSimulation(double totalTime, double dt, Planet[] planets) {
 
@@ -111,7 +120,8 @@ public final class NBody {
     }
 
     /**
-     * After the simulation has completed, print to standard output the updated data for each particle in the plane
+     * After the simulation has completed, print to standard output the updated
+     * data for each particle in the plane
      * 
      * @param planets The array of Planets that was involved in the simulation
      */
@@ -119,8 +129,7 @@ public final class NBody {
         System.out.println(N);
         System.out.println(universeSize);
         for (Planet p : planets) {
-            System.out.println(String.format("%7.4e %7.4e %7.4e %7.4e %7.4e %s", p.getX(), p.getY(), p.getXVelocity(),
-                    p.getYVelocity(), p.getMass(), p.getImg()));
+            System.out.println(String.format("%7.4e %7.4e %7.4e %7.4e %7.4e %s", p.getX(), p.getY(), p.getXVelocity(), p.getYVelocity(), p.getMass(), p.getImg()));
         }
     }
 

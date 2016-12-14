@@ -1,6 +1,7 @@
 package nbodies;
 /*************************************************************************
- * Compilation: javac In.java Execution: java In (basic test --- see source for required files)
+ * Compilation: javac In.java Execution: java In (basic test --- see source for
+ * required files)
  *
  * Reads in data of various types from standard input, files, and URLs.
  *
@@ -19,19 +20,25 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
- * <i>Input</i>. This class provides methods for reading strings and numbers from standard input, file input, URLs, and sockets.
+ * <i>Input</i>. This class provides methods for reading strings and numbers
+ * from standard input, file input, URLs, and sockets.
  * <p>
- * The Locale used is: language = English, country = US. This is consistent with the formatting conventions with Java floating-point literals,
- * command-line arguments (via {@link Double#parseDouble(String)}) and standard output.
+ * The Locale used is: language = English, country = US. This is consistent with
+ * the formatting conventions with Java floating-point literals, command-line
+ * arguments (via {@link Double#parseDouble(String)}) and standard output.
  * <p>
- * For additional documentation, see <a href="http://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of <i>Introduction to Programming in Java:
- * An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see
+ * <a href="http://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
+ * <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by
+ * Robert Sedgewick and Kevin Wayne.
  * <p>
- * Like {@link Scanner}, reading a token also consumes preceding Java whitespace, reading a full line consumes the following end-of-line delimeter,
+ * Like {@link Scanner}, reading a token also consumes preceding Java
+ * whitespace, reading a full line consumes the following end-of-line delimeter,
  * while reading a character consumes nothing extra.
  * <p>
- * Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines consist of \n, \r, \r\n, and Unicode hex code points 0x2028, 0x2029,
- * 0x0085; see <tt><a href="http://www.docjar.com/html/api/java/util/Scanner.java.html">
+ * Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines
+ * consist of \n, \r, \r\n, and Unicode hex code points 0x2028, 0x2029, 0x0085;
+ * see <tt><a href="http://www.docjar.com/html/api/java/util/Scanner.java.html">
  *  Scanner.java</a></tt> (NB: Java 6u23 and earlier uses only \r, \r, \r\n).
  *
  * @author David Pritchard
@@ -147,9 +154,11 @@ public final class In {
     }
 
     /**
-     * Create an input stream from a given Scanner source; use with <tt>new Scanner(String)</tt> to read from a string.
+     * Create an input stream from a given Scanner source; use with
+     * <tt>new Scanner(String)</tt> to read from a string.
      * <p>
-     * Note that this does not create a defensive copy, so the scanner will be mutated as you read on.
+     * Note that this does not create a defensive copy, so the scanner will be
+     * mutated as you read on.
      */
     public In(Scanner scanner) {
         this.scanner = scanner;
@@ -163,11 +172,13 @@ public final class In {
     }
 
     /***
-     * begin: section (2 of 2) of code duplicated from In to StdIn, with all methods changed from "public" to "public static"
+     * begin: section (2 of 2) of code duplicated from In to StdIn, with all
+     * methods changed from "public" to "public static"
      ***/
 
     /**
-     * Is the input empty (except possibly for whitespace)? Use this to know whether the next call to {@link #readString()}, {@link #readDouble()},
+     * Is the input empty (except possibly for whitespace)? Use this to know
+     * whether the next call to {@link #readString()}, {@link #readDouble()},
      * etc will succeed.
      */
     public boolean isEmpty() {
@@ -175,7 +186,8 @@ public final class In {
     }
 
     /**
-     * Does the input have a next line? Use this to know whether the next call to {@link #readLine()} will succeed.
+     * Does the input have a next line? Use this to know whether the next call
+     * to {@link #readLine()} will succeed.
      * <p>
      * Functionally equivalent to {@link #hasNextChar()}.
      */
@@ -184,7 +196,8 @@ public final class In {
     }
 
     /**
-     * Is the input empty (including whitespace)? Use this to know whether the next call to {@link #readChar()} will succeed.
+     * Is the input empty (including whitespace)? Use this to know whether the
+     * next call to {@link #readChar()} will succeed.
      * <p>
      * Functionally equivalent to {@link #hasNextLine()}.
      */
@@ -282,7 +295,8 @@ public final class In {
     }
 
     /**
-     * Read and return the next boolean, allowing case-insensitive "true" or "1" for true, and "false" or "0" for false.
+     * Read and return the next boolean, allowing case-insensitive "true" or "1"
+     * for true, and "false" or "0" for false.
      */
     public boolean readBoolean() {
         String s = readString();
@@ -313,7 +327,8 @@ public final class In {
     }
 
     /**
-     * Reads all remaining lines from input stream and returns them as an array of strings.
+     * Reads all remaining lines from input stream and returns them as an array
+     * of strings.
      * 
      * @return all remaining lines on input stream, as an array of strings
      */
@@ -359,7 +374,8 @@ public final class In {
     /**
      * Reads all ints from a file
      * 
-     * @deprecated Clearer to use <tt>new In(filename)</tt>. {@link #readAllInts()}
+     * @deprecated Clearer to use <tt>new In(filename)</tt>.
+     *             {@link #readAllInts()}
      */
     public static int[] readInts(String filename) {
         return new In(filename).readAllInts();
@@ -368,7 +384,8 @@ public final class In {
     /**
      * Reads all doubles from a file
      * 
-     * @deprecated Clearer to use <tt>new In(filename)</tt>. {@link #readAllDoubles()}
+     * @deprecated Clearer to use <tt>new In(filename)</tt>.
+     *             {@link #readAllDoubles()}
      */
     public static double[] readDoubles(String filename) {
         return new In(filename).readAllDoubles();
@@ -377,7 +394,8 @@ public final class In {
     /**
      * Reads all strings from a file
      * 
-     * @deprecated Clearer to use <tt>new In(filename)</tt>. {@link #readAllStrings()}
+     * @deprecated Clearer to use <tt>new In(filename)</tt>.
+     *             {@link #readAllStrings()}
      */
     public static String[] readStrings(String filename) {
         return new In(filename).readAllStrings();

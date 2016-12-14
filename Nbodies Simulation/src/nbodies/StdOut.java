@@ -12,10 +12,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
 /**
- * <i>Standard output</i>. This class provides methods for writing strings and numbers to standard output.
+ * <i>Standard output</i>. This class provides methods for writing strings and
+ * numbers to standard output.
  * <p>
- * For additional documentation, see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of <i>Introduction to Programming in Java: An
- * Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+ * For additional documentation, see
+ * <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+ * <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by
+ * Robert Sedgewick and Kevin Wayne.
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
@@ -202,7 +205,8 @@ public final class StdOut {
     }
 
     /**
-     * Print a formatted string to standard output using the specified format string and arguments, and flush standard output.
+     * Print a formatted string to standard output using the specified format
+     * string and arguments, and flush standard output.
      */
     public static void printf(String format, Object... args) {
         out.printf(LOCALE, format, args);
@@ -210,7 +214,8 @@ public final class StdOut {
     }
 
     /**
-     * Print a formatted string to standard output using the specified locale, format string, and arguments, and flush standard output.
+     * Print a formatted string to standard output using the specified locale,
+     * format string, and arguments, and flush standard output.
      */
     public static void printf(Locale locale, String format, Object... args) {
         out.printf(locale, format, args);
