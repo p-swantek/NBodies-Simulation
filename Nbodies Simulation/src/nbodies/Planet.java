@@ -1,9 +1,8 @@
 package nbodies;
 
 /**
- * Data type that represents a particle in the universe. The movement of this
- * particle will be determined by the net gravitational forces acting upon it
- * from other particles within the universe
+ * Data type that represents a particle in the universe. The movement of this particle will be determined by the net gravitational forces acting upon
+ * it from other particles within the universe
  * 
  * @author Peter Swantek
  * @version 1.8
@@ -22,26 +21,18 @@ public final class Planet {
     private double mass; // mass of this particle
     private String img; // image file associated with this particle
 
-    private double xNetForce = 0.0; // net force acting on this particle in the
-                                    // x coordinate
-    private double yNetForce = 0.0; // net force acting on this particle in the
-                                    // y coordinate
+    private double xNetForce = 0.0; // net force acting on this particle in the x coordinate
+    private double yNetForce = 0.0; // net force acting on this particle in the y coordinate
 
     /**
      * Constructs a new instance of a Planet in the universe
      * 
-     * @param xCoord
-     *            The initial x coordinate
-     * @param yCoord
-     *            The initial y coordinate
-     * @param xVelo
-     *            The initial x velocity
-     * @param yVelo
-     *            The initial y velocity
-     * @param newMass
-     *            The mass of this planet
-     * @param newImageFile
-     *            The image file to associate with this planet
+     * @param xCoord The initial x coordinate
+     * @param yCoord The initial y coordinate
+     * @param xVelo The initial x velocity
+     * @param yVelo The initial y velocity
+     * @param newMass The mass of this planet
+     * @param newImageFile The image file to associate with this planet
      */
     public Planet(double xCoord, double yCoord, double xVelo, double yVelo, double newMass, String newImageFile) {
 
@@ -147,11 +138,9 @@ public final class Planet {
     }
 
     /**
-     * Calculates the distance from this planet to another planet in the
-     * universe
+     * Calculates the distance from this planet to another planet in the universe
      * 
-     * @param other
-     *            The planet to which distance should be calculated
+     * @param other The planet to which distance should be calculated
      * @return The distance between the two planets
      */
     public double calcDistance(Planet other) {
@@ -166,26 +155,17 @@ public final class Planet {
     /**
      * Calculates the total force acting upon two planets in the universe
      * 
-     * @param other
-     *            The planet to which the amount of force should be calculated
+     * @param other The planet to which the amount of force should be calculated
      * @return The force that is acting on these two planets
      */
     public double calcPairwiseForce(Planet other) {
 
-        return getGravitationalForce(getMass(), other.getMass(), calcDistance(other)); // calculate
-                                                                                       // the
-                                                                                       // gravitational
-                                                                                       // force
-                                                                                       // between
-                                                                                       // the
-                                                                                       // two
-                                                                                       // planets
-
+        // calculate the gravitational force between the two planets
+        return getGravitationalForce(getMass(), other.getMass(), calcDistance(other));
     }
 
     /*
-     * Calculate the force of gravity between two planets using Newton's law of
-     * Gravitation
+     * Calculate the force of gravity between two planets using Newton's law of Gravitation
      */
     private static double getGravitationalForce(double mass1, double mass2, double distance) {
 
@@ -193,8 +173,7 @@ public final class Planet {
     }
 
     /*
-     * Calculates and sets the net force amount in the x and y directions for
-     * this planet based on the gravitational forces acting upon it from other
+     * Calculates and sets the net force amount in the x and y directions for this planet based on the gravitational forces acting upon it from other
      * planets
      */
     void setNetForce(Planet[] otherPlanets) {
@@ -235,8 +214,7 @@ public final class Planet {
     }
 
     /*
-     * calculates the the amount of force acting on this planet for either the x
-     * or y coordinate
+     * calculates the the amount of force acting on this planet for either the x or y coordinate
      */
     private static double getForceVector(double netForce, double distDelta, double distance) {
         return (netForce * distDelta) / distance;

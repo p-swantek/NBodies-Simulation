@@ -1,12 +1,10 @@
 package nbodies;
 
 /**
- * Simulates N particles in a plane, particles move due to the gravitational
- * forces mutually affecting each particle as demonstrated by Sir Issac Newton's
- * Law of Universal Graviation. Takes in 3 command line arguments: the length of
- * the simulation, the size of a time step in the simulation, and a text file
- * containing planetary data from which to build the universe for the
- * simulation. Theme from 2001: A Space Odyssey plays during the simulation
+ * Simulates N particles in a plane, particles move due to the gravitational forces mutually affecting each particle as demonstrated by Sir Issac
+ * Newton's Law of Universal Gravitation. Takes in 3 command line arguments: the length of the simulation, the size of a time step in the simulation,
+ * and a text file containing planetary data from which to build the universe for the simulation. Theme from 2001: A Space Odyssey plays during the
+ * simulation
  * 
  * @author Peter Swantek
  * @version 1.8
@@ -17,10 +15,7 @@ public final class NBody {
 
     private static int N; // amount of particles
     private static double universeSize; // radius of the universe
-    public static final String SOUNDTRACK_FILE = "audio/2001.mid"; // 2001: A
-                                                                   // Space
-                                                                   // Odyssey
-                                                                   // theme song
+    public static final String SOUNDTRACK_FILE = "audio/2001.mid"; // 2001: A Space Odyssey theme song
 
     public static final int EXIT_SUCCESS = 0;
     public static final int EXIT_FAILURE = 1;
@@ -28,10 +23,8 @@ public final class NBody {
     /**
      * Builds a new instance of a Planet using data from a text file
      * 
-     * @param in
-     *            Input stream from a text file containing planetary data
-     * @return A Planet instance with the properties obtained from a text file
-     *         for planetary data
+     * @param in Input stream from a text file containing planetary data
+     * @return A Planet instance with the properties obtained from a text file for planetary data
      */
     public static Planet getPlanet(In in) {
 
@@ -50,14 +43,10 @@ public final class NBody {
     }
 
     /**
-     * Build the universe for the simulation using a text file of data for a
-     * particular simulation
+     * Build the universe for the simulation using a text file of data for a particular simulation
      * 
-     * @param in
-     *            Input stream from a text file containing data for a particular
-     *            simulation
-     * @return An array of Planet objects within the universe that will be
-     *         involved in the simulation
+     * @param in Input stream from a text file containing data for a particular simulation
+     * @return An array of Planet objects within the universe that will be involved in the simulation
      */
     public static Planet[] buildUniverse(In in) {
 
@@ -77,13 +66,10 @@ public final class NBody {
     }
 
     /**
-     * Draw the universe that is being simulated using StdDraw API. Draw the N
-     * particles and make the background a space image. Use the radius of the
+     * Draw the universe that is being simulated using StdDraw API. Draw the N particles and make the background a space image. Use the radius of the
      * universe to scale the canvas
      * 
-     * @param planets
-     *            An array of Planets (particles) that should be drawn in the
-     *            universe
+     * @param planets An array of Planets (particles) that should be drawn in the universe
      */
     public static void drawUniverse(Planet[] planets) {
         StdDraw.setXscale(-universeSize, universeSize);
@@ -98,12 +84,9 @@ public final class NBody {
     /**
      * Runs the Nbodies simulation for a given universe
      * 
-     * @param totalTime
-     *            The total time of the simulation
-     * @param dt
-     *            The amount of time each simulation step will take
-     * @param planets
-     *            The array of Planets that will be involved in the simulation
+     * @param totalTime The total time of the simulation
+     * @param dt The amount of time each simulation step will take
+     * @param planets The array of Planets that will be involved in the simulation
      */
     public static void runSimulation(double totalTime, double dt, Planet[] planets) {
 
@@ -128,11 +111,9 @@ public final class NBody {
     }
 
     /**
-     * After the simulation has completed, print to standard output the updated
-     * data for each particle in the plane
+     * After the simulation has completed, print to standard output the updated data for each particle in the plane
      * 
-     * @param planets
-     *            The array of Planets that was involved in the simulation
+     * @param planets The array of Planets that was involved in the simulation
      */
     public static void simulationOutput(Planet[] planets) {
         System.out.println(N);
