@@ -1,0 +1,5 @@
+projectKey=my:nbodies
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/my:nbodies
+ceTaskId=AVhbNdWAycRSklnlNx0P
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVhbNdWAycRSklnlNx0P
